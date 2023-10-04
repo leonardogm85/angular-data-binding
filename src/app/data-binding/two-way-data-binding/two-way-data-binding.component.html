@@ -1,0 +1,58 @@
+<article>
+  <h3>Two-Way Data Binding</h3>
+
+  <div class="mb-2">
+    <input
+        class="form-control"
+        type="text"
+        placeholder="Name with property and event binding"
+        [value]="name"
+        (input)="name = $any($event.target).value">
+  </div>
+
+  <div class="mb-2">
+    <input
+        class="form-control"
+        type="text"
+        placeholder="Name with ngModel and ngModelChange"
+        [ngModel]="name"
+        (ngModelChange)="name = $event">
+  </div>
+
+  <div class="mb-2">
+    <input
+        class="form-control"
+        type="text"
+        placeholder="Name with two-way data binding"
+        [(ngModel)]="name">
+  </div>
+
+  <div class="mb-2">
+    <input
+        class="form-control"
+        type="text"
+        placeholder="Name with bindon-ngModel"
+        bindon-ngModel="name">
+  </div>
+
+  <p class="mb-4">Name: {{ name }}</p>
+
+  <div class="mb-2">
+    <input
+        class="form-control"
+        type="text"
+        placeholder="Person name"
+        [(ngModel)]="person.name">
+  </div>
+
+  <div class="mb-2">
+    <input
+        class="form-control"
+        type="text"
+        placeholder="Person age"
+        aria-label="Person age"
+        [(ngModel)]="person.age">
+  </div>
+
+  <p>Name: {{ person.name }}, Age: {{ person.age }}</p>
+</article>

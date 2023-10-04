@@ -1,0 +1,22 @@
+<section>
+
+  <!-- <app-interpolation></app-interpolation> -->
+
+  <!-- <app-property-binding></app-property-binding> -->
+
+  <!-- <app-class-and-style-binding></app-class-and-style-binding> -->
+
+  <!-- <app-event-binding></app-event-binding> -->
+
+  <!-- <app-two-way-data-binding></app-two-way-data-binding> -->
+
+  <article>
+    <h3>Input / Output Property</h3>
+    <app-course
+        [name]="courseName"></app-course>
+    <app-counter
+        [value]="defaultValue"
+        (modifiedValue)="onModifiedValue($event)"></app-counter>
+  </article>
+
+</section>

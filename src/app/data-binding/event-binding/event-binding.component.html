@@ -1,0 +1,27 @@
+<article>
+  <h3>Event Binding</h3>
+
+  <button type="button" class="btn btn-primary me-1" (click)="buttonClicked()">Click me with: (click)</button>
+  <button type="button" class="btn btn-primary" on-click="buttonClicked()">Click me with: on-click</button>
+
+  <input
+      class="form-control my-4"
+      type="text"
+      placeholder="Value"
+      (keyup)="onKeyUp($event)"
+      (keyup.enter)="saveValue($any($event.target).value)"
+      (blur)="saveValue(inputField.value)"
+      #inputField>
+
+  <div class="my-4">
+    <div>Current value: {{ currentValue }}</div>
+    <div>Value saved: {{ valueSaved }}</div>
+  </div>
+
+  <span
+      (mouseover)="onMouseOverOut()"
+      (mouseout)="onMouseOverOut()"
+      [class.highlight]="isMouseOver">
+    Mouse over here
+  </span>
+</article>

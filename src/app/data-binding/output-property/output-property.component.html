@@ -1,0 +1,16 @@
+<div class="input-group">
+  <div class="col-auto">
+    <button type="button" class="btn btn-primary" (click)="decrement()">-</button>
+  </div>
+  <div class="col-auto px-2">
+    <input
+        class="form-control text-center"
+        type="number"
+        readonly
+        [value]="value"
+        #inputField>
+  </div>
+  <div class="col-auto">
+    <button type="button" class="btn btn-primary" (click)="increment()">+</button>
+  </div>
+</div>

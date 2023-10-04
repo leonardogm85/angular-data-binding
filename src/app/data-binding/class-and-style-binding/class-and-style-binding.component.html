@@ -1,0 +1,29 @@
+<article>
+  <h3>Class and Style Binding</h3>
+
+  <div class="mb-4">
+    Select a class:
+    <select class="form-select" aria-label="Alert" #alertClass (change)="0">
+      <option value="alert-primary">Primary</option>
+      <option value="alert-secondary">Secondary</option>
+      <option value="alert-success">Success</option>
+      <option value="alert-danger">Danger</option>
+    </select>
+  </div>
+
+  <div class="alert {{ alertClass.value }}" role="alert">
+    THIS IS AN ALERT
+  </div>
+
+  <div
+      class="alert alert-danger"
+      role="alert"
+      [style.visibility]="alertClass.value === 'alert-danger' ? 'visible' : 'hidden'">
+    THIS IS A DANGER ALERT
+  </div>
+
+  <div class="alert" role="alert" [class.alert-primary]="alertClass.value === 'alert-primary'">Primary alert</div>
+  <div class="alert" role="alert" [class.alert-secondary]="alertClass.value === 'alert-secondary'">Secondary alert</div>
+  <div class="alert" role="alert" [class.alert-success]="alertClass.value === 'alert-success'">Success alert</div>
+  <div class="alert" role="alert" [class.alert-danger]="alertClass.value === 'alert-danger'">Danger alert</div>
+</article>
